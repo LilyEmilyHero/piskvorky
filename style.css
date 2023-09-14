@@ -1,12 +1,14 @@
 body {
-  background-image: linear-gradient(#615dad, #ffc8da);
+  height: 100vh;
+  background: linear-gradient(#615dad, #ffc8da);
+  background-color: #ffc8da;
   color: white;
   display: flex;
   justify-content: center;
 }
 
 h1 {
-  font-family: 'Lobster', cursive;
+  font-family: 'Lobster';
 }
 
 a {
@@ -14,12 +16,18 @@ a {
   text-decoration: none;
 }
 
+button {
+  color: white
+}
+
+
 .piskvorky {
   width: 364px;
   text-align: center;
   background-color: #283e50;
   margin-top: 50px;
   border-radius: 15px 15px 0px 0px;
+  font-family: sans-serif;
 
 }
 
@@ -30,6 +38,7 @@ a {
 
 .piskvorky__odstavec {
   padding: 20px 15px;
+
 }
 
 .piskvorky__tlacitka {
@@ -39,6 +48,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 0px;
 }
 
 .piskvorky__tlacitka--pravidla {
