@@ -1,0 +1,59 @@
+body {
+  background-image: linear-gradient(#615dad, #ffc8da);
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.piskvorky {
+  width: 364px;
+  text-align: center;
+  background-color: #283e50;
+  margin-top: 50px;
+  border-radius: 15px 15px 0px 0px;
+
+}
+
+.piskvorky__obrazek {
+  width: 100%;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.piskvorky__odstavec {
+  padding: 20px 15px;
+}
+
+.piskvorky__tlacitka {
+  /*padding: 10px;*/
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.piskvorky__tlacitka--pravidla {
+  background-color: #1fcca4;
+  border-bottom: 1px solid black;
+}
+
+.piskvorky__tlacitka--pravidla:hover {
+  background-color: #1cbb96;
+}
+
+.piskvorky__tlacitka--hrat {
+  background-color: #0197f6;
+}
+
+.piskvorky__tlacitka--hrat:hover {
+  background-color: #0090e9;
+}
