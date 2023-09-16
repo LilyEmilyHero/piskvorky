@@ -1,14 +1,17 @@
 body {
   height: 100vh;
   background: linear-gradient(#615dad, #ffc8da);
-  background-color: #ffc8da;
   color: white;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  flex-wrap: wrap;
+  align-content: center;
+  flex-direction: column;
 }
 
+
 h1 {
-  font-family: 'Lobster';
+  font-family: 'Lobster', sans-serif;
 }
 
 a {
@@ -22,13 +25,13 @@ button {
 
 
 .piskvorky {
+
   width: 364px;
   text-align: center;
   background-color: #283e50;
   margin-top: 50px;
   border-radius: 15px 15px 0px 0px;
   font-family: sans-serif;
-
 }
 
 .piskvorky__obrazek {
