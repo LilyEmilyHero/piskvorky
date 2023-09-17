@@ -1,13 +1,14 @@
 body {
   height: 100vh;
-  background: linear-gradient(#615dad, #ffc8da);
   color: white;
   display: flex;
   /* justify-content: center; */
   flex-wrap: wrap;
   align-content: center;
   flex-direction: column;
-  margin: 0
+  margin: 0;
+  background: linear-gradient(#615dad, #ffc8da) no-repeat;
+  background-color: #ffc8da;
 }
 
 
@@ -26,22 +27,21 @@ button {
 
 
 .piskvorky {
-
   max-width: 364px;
   text-align: center;
   background-color: #283e50;
-  margin-top: 50px;
-  border-radius: 15px 15px 0px 0px;
   font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+
 }
 
 .piskvorky__obrazek {
   width: 100%;
-  border-radius: 15px 15px 0px 0px;
 }
 
 .piskvorky__odstavec {
-  padding: 20px 15px;
+  padding: 0px 15px 20px 15px;
 
 }
 
@@ -70,4 +70,28 @@ button {
 
 .piskvorky__tlacitka--hrat:hover {
   background-color: #0090e9;
+}
+
+
+@media (min-width: 300px) {
+  body {
+    height: 100vh;
+
+  }
+
+  .piskvorky {
+    max-width: 364px;
+    text-align: center;
+    background-color: #283e50;
+    margin-top: 3%;
+    border-radius: 15px 15px 0px 0px;
+    font-family: sans-serif;
+    flex-grow: 0;
+  }
+
+  .piskvorky__obrazek {
+    width: 100%;
+    border-radius: 15px 15px 0px 0px;
+  }
+
 }
