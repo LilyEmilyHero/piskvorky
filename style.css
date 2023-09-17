@@ -7,6 +7,7 @@ body {
   flex-wrap: wrap;
   align-content: center;
   flex-direction: column;
+  margin: 0
 }
 
 
@@ -26,7 +27,7 @@ button {
 
 .piskvorky {
 
-  width: 364px;
+  max-width: 364px;
   text-align: center;
   background-color: #283e50;
   margin-top: 50px;
