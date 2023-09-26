@@ -2,7 +2,7 @@ body {
   height: 100vh;
   color: white;
   display: flex;
-  /* justify-content: center; */
+  font-family: sans-serif;
   flex-wrap: wrap;
   align-content: center;
   flex-direction: column;
@@ -14,15 +14,17 @@ body {
 
 h1 {
   font-family: 'Lobster', sans-serif;
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
 a {
-  color: white;
   text-decoration: none;
 }
 
 button {
-  color: white
+  color: white;
 }
 
 
@@ -30,7 +32,6 @@ button {
   max-width: 364px;
   text-align: center;
   background-color: #283e50;
-  font-family: sans-serif;
   display: flex;
   flex-direction: column;
 
@@ -60,7 +61,8 @@ button {
   border-bottom: 1px solid black;
 }
 
-.piskvorky__tlacitka--pravidla:hover {
+.piskvorky__tlacitka--pravidla:hover,
+.piskvorky__tlacitka--domu:hover {
   background-color: #1cbb96;
 }
 
@@ -68,7 +70,8 @@ button {
   background-color: #0197f6;
 }
 
-.piskvorky__tlacitka--hrat:hover {
+.piskvorky__tlacitka--hrat:hover,
+.piskvorky__tlacitka--restart:hover {
   background-color: #0090e9;
 }
 
@@ -85,7 +88,6 @@ button {
     background-color: #283e50;
     margin-top: 3%;
     border-radius: 15px 15px 0px 0px;
-    font-family: sans-serif;
     flex-grow: 0;
   }
 
@@ -93,5 +95,64 @@ button {
     width: 100%;
     border-radius: 15px 15px 0px 0px;
   }
+}
 
+.hrac {
+  padding-left: 10px;
+}
+
+.piskvorkyHra {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  padding: 0px 15px;
+}
+
+.piskvorky__menu {
+  display: flex;
+  justify-content: space-between;
+  text-align: baseline;
+  padding: 10px 0px;
+}
+
+.piskvorky__menu--hrac {
+  display: flex;
+  text-align: baseline;
+}
+
+button.piskvorky__menu--menu {}
+
+.piskvorky__tlacitka--domu {
+  background-color: #1fcca4;
+  border-radius: 5px 5px 5px 5px;
+  border: 0px;
+  height: 2.5rem;
+}
+
+.piskvorky__tlacitka--restart {
+  background-color: #0197f6;
+  border-radius: 5px 5px 5px 5px;
+  border: 0px;
+  height: 2.5rem;
+}
+
+.piskvorky__policko {
+  aspect-ratio: 1 / 1;
+  width: 10%;
+  border: 1px solid #283e50;
+  text-decoration: none;
+  margin: 0px;
+  padding-block: 5px;
+  background-color: rgba(250, 250, 250, 0.7);
+}
+
+.piskvorky__policko:hover,
+.piskvorky__policko:active,
+.piskvorky__policko:focus {
+  background-color: rgba(250, 250, 250, 0.8);
+}
+
+.piskvorky__herniPlocha {
+  margin: 0px;
+  padding: 0px;
 }
