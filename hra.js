@@ -27,3 +27,13 @@ document.querySelector('#pole06').addEventListener('click', hracuvTah);
 document.querySelector('#pole07').addEventListener('click', hracuvTah);
 document.querySelector('#pole08').addEventListener('click', hracuvTah);
 document.querySelector('#pole09').addEventListener('click', hracuvTah);
+
+const chceteRestartovatHru = (event) => {
+  if (!confirm('Chcete restartovat hru?')) {
+    event.preventDefault();
+  }
+};
+
+document
+  .querySelector('.piskvorkyHra__tlacitka--restart')
+  .addEventListener('click', chceteRestartovatHru);
