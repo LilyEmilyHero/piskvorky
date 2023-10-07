@@ -110,6 +110,13 @@ button {
   height: 2.5rem;
 }
 
+.piskvorkyHra__herniPlocha {
+  margin: 0px;
+  padding: 0px;
+  border: 1px solid #283e50;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
 .piskvorkyHra__policko {
   aspect-ratio: 1 / 1;
   width: 10%;
@@ -125,6 +132,7 @@ button {
   background-size: 80%;
   background-repeat: no-repeat;
   background-position: center;
+  animation: polickoAnimace .15s;
 }
 
 .piskvorkyHra__policko--krizek {
@@ -132,19 +140,13 @@ button {
   background-size: 80%;
   background-repeat: no-repeat;
   background-position: center;
+  animation: polickoAnimace .15s;
 }
 
 .piskvorkyHra__policko:hover,
 .piskvorkyHra__policko:active,
 .piskvorkyHra__policko:focus {
   background-color: rgba(250, 250, 250, 0.8);
-}
-
-.piskvorkyHra__herniPlocha {
-  margin: 0px;
-  padding: 0px;
-  border: 1px solid #283e50;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 @media (min-width: 300px) {
@@ -164,5 +166,20 @@ button {
   .piskvorky__obrazek {
     width: 100%;
     border-radius: 15px 15px 0px 0px;
+  }
+}
+
+
+@keyframes polickoAnimace {
+  from {
+    background-size: 0%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  to {
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
