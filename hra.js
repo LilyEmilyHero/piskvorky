@@ -15,9 +15,21 @@ vsechnaPole.forEach((polickoPole) => {
   herniPole.push(hodnota);
 });
 
+/* výpočet výtězství */
+const uzNekdoVyhral = () => {
+  const vitez = findWinner(herniPole);
+  if (vitez === 'o' || vitez === 'x') {
+    alert(`Vyhrál hráč se symbolem ${vitez}.`);
+    location.reload();
+  } else if (vitez === 'tie') {
+    alert(`Hra skončila nerozhodně.`);
+    location.reload();
+  }
+};
+
 /* reakce na kliknutí na políčko */
 const hracuvTah = (event) => {
-  const indexPole = [...event.target.parentNode.children].indexOf(event.target);
+  const indexPole = [...event.target.parentNode.children].indexOf(event.target); // zjistí mi aktuállní pozici v herniPole[]
 
   if (hracNaTahu === 'kruh') {
     event.target.classList.add('piskvorkyHra__policko--kruh');
@@ -40,14 +52,17 @@ const hracuvTah = (event) => {
   }
   console.log(herniPole);
 
-  const vitez = findWinner(herniPole);
+  //const vitez = findWinner(herniPole);
+  setTimeout(uzNekdoVyhral, 250);
+
+  /*
   if (vitez === 'o' || vitez === 'x') {
-    alert(`Vyhrál hráč se symbolem ${vitez}.`);
+    setTimeout(alert(`Vyhrál hráč se symbolem ${vitez}.`), 5000); //alert(`Vyhrál hráč se symbolem ${vitez}.`);
     location.reload();
   } else if (vitez === 'tie') {
     alert(`Hra skončila nerozhodně.`);
     location.reload();
-  }
+  }*/
 };
 /* výběr všech políček */
 vsechnaPole.forEach((pole) => {
