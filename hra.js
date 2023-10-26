@@ -20,11 +20,10 @@ const uzNekdoVyhral = () => {
   const vitez = findWinner(herniPole);
   if (vitez === 'o' || vitez === 'x') {
     alert(`Vyhrál hráč se symbolem ${vitez}.`);
-    console.log(vitez);
-    //location.reload();
+    location.reload();
   } else if (vitez === 'tie') {
     alert(`Hra skončila nerozhodně.`);
-    //location.reload();
+    location.reload();
   }
 }; //acient legends, holy recitation, granite, boundless
 
@@ -41,33 +40,25 @@ const hracuvTah = (event) => {
 
   if (hracNaTahu === 'kruh') {
     event.target.classList.add('piskvorkyHra__policko--kruh');
+    herniPole[event] = 'o';
     event.target.disabled = true;
     ikonaHracElement.src = 'cross.svg';
     herniPole[indexPole] = 'o';
     hracNaTahu = 'krizek';
-    hracX();
+    aiHracX();
+    setTimeout(uzNekdoVyhral, 300);
   } else {
     event.target.classList.add('piskvorkyHra__policko--krizek');
+    herniPole[event] = 'x';
     event.target.disabled = true;
     ikonaHracElement.src = 'circle.svg';
     herniPole[indexPole] = 'x';
     hracNaTahu = 'kruh';
   }
-
-  if (event.target.classList.contains('piskvorkyHra__policko--kruh')) {
-    herniPole[event] = 'o';
-  } else if (event.target.classList.contains('piskvorkyHra__policko--krizek')) {
-    herniPole[event] = 'x';
-  }
-  //console.log(herniPole);
-
-  //const vitez = findWinner(herniPole);
-  setTimeout(uzNekdoVyhral, 300);
 };
 
 /* přidání AI - nápověda*/
-const hracX = async () => {
-  console.log('Hráč X je na tahu');
+const aiHracX = async () => {
   const response = await fetch(
     'https://piskvorky.czechitas-podklady.cz/api/suggest-next-move',
     {
@@ -96,11 +87,15 @@ vsechnaPole.forEach((pole) => {
 const chceteRestartovatHru = (event) => {
   if (!confirm('Chcete restartovat hru?')) {
     event.preventDefault();
-  } else {
-    vsechnaPole.forEach(() => {
-      vsechnaPole.classList = 'piskvorkyHra__policko';
+  } /*else {
+    vsechnaPole.forEach((pole) => {
+      pole.classList.remove('piskvorkyHra__policko--krizek');
+      pole.classList.remove('piskvorkyHra__policko--kruh');
+      pole.target.disabled = false;
+      console.log(herniPole);
+      event.preventDefault();
     });
-  }
+  }*/
 };
 
 /* kliknutí na tlačítko restart */
